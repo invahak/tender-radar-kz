@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Тендер-радар KZ — новые госзакупки в Telegram</title>
+<meta name="description" content="Telegram-бот присылает новые лоты goszakup.gov.kz по вашим словам: срок, заказчик, повторная ли закупка и ориентир цены победы. 7 дней бесплатно.">
+<meta property="og:title" content="Тендер-радар KZ — новые госзакупки в Telegram">
+<meta property="og:description" content="Новые лоты goszakup.gov.kz по вашим словам с аналитикой: срок, заказчик, конкуренты, ориентир цены. 7 дней бесплатно.">
+<meta property="og:type" content="website">
+<style>
+:root{--bg:#f6f8fb;--card:#fff;--ink:#0f1b2d;--muted:#5a6b82;--line:#e3e8ef;--accent:#0a7cff;--accent2:#00b3a4;--hot:#ff6a3d;--soft:#eaf3ff}
+@media (prefers-color-scheme:dark){:root{--bg:#0b1220;--card:#121b2d;--ink:#e8eef8;--muted:#9aabc2;--line:#22304a;--soft:#13233d}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:17px/1.55 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+a{color:var(--accent)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+header{padding:18px 0}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.logo{font-weight:800;letter-spacing:-.02em;font-size:19px}
+.logo span{color:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:#fff;text-decoration:none;font-weight:700;padding:14px 22px;border-radius:12px;box-shadow:0 6px 18px rgba(10,124,255,.25)}
+.btn.small{padding:9px 14px;font-size:15px;box-shadow:none}
+.btn:hover{filter:brightness(1.07)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:36px 0 56px}
+h1{font-size:clamp(32px,5vw,52px);line-height:1.08;letter-spacing:-.03em;margin:0 0 18px}
+h1 em{font-style:normal;color:var(--accent)}
+.lead{font-size:19px;color:var(--muted);margin:0 0 26px;max-width:34em}
+.note{color:var(--muted);font-size:14px;margin-top:12px}
+.phone{background:var(--card);border:1px solid var(--line);border-radius:22px;padding:16px;box-shadow:0 20px 50px rgba(15,27,45,.12)}
+.msg{background:var(--soft);border-radius:14px;padding:14px 15px;font-size:14.5px;line-height:1.5}
+.msg b{display:block;font-size:15.5px;margin-bottom:6px}
+.msg .hot{color:var(--hot);font-weight:700}
+.msg .row{margin:3px 0}
+.btns{display:grid;gap:6px;margin-top:8px}
+.btns div{background:var(--card);border:1px solid var(--line);border-radius:10px;text-align:center;padding:8px;font-size:14px;color:var(--accent);font-weight:600}
+section{padding:54px 0;border-top:1px solid var(--line)}
+h2{font-size:clamp(26px,3.4vw,36px);letter-spacing:-.02em;margin:0 0 26px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px}
+.card h3{margin:0 0 8px;font-size:18px}
+.card p{margin:0;color:var(--muted);font-size:15.5px}
+.step{font-weight:800;color:var(--accent);font-size:14px;letter-spacing:.06em;margin-bottom:6px}
+.price{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:stretch}
+.big{font-size:44px;font-weight:800;letter-spacing:-.03em;margin:6px 0}
+ul.check{list-style:none;padding:0;margin:14px 0 0}
+ul.check li{padding:6px 0 6px 28px;position:relative}
+ul.check li:before{content:"✓";position:absolute;left:0;color:var(--accent2);font-weight:800}
+details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:700}
+details p{color:var(--muted);margin:10px 0 0}
+.cta{text-align:center;padding:64px 0}
+footer{color:var(--muted);font-size:14px;padding:26px 0 40px;border-top:1px solid var(--line)}
+@media (max-width:860px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr}.price{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="wrap nav">
+  <div class="logo">Тендер-радар <span>KZ</span></div>
+  <a class="btn small" href="https://t.me/tender_test123_bot">Открыть в Telegram</a>
+</div></header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <h1>Новые госзакупки по вашим словам — <em>сразу в Telegram</em></h1>
+      <p class="lead">Напишите боту «принтер», «уборк» или «кровл». Бот проверяет goszakup.gov.kz каждые 10 минут и присылает новый лот вместе с аналитикой: сколько осталось до конца приёма заявок, повторная ли закупка, есть ли у заказчика «свой» поставщик и какую цену обычно дают победители.</p>
+      <a class="btn" href="https://t.me/tender_test123_bot">Попробовать 7 дней бесплатно</a>
+      <p class="note">Без регистрации на сайте и без карты. Нужен только Telegram.</p>
+    </div>
+    <div class="phone" aria-label="Пример уведомления бота">
+      <div class="msg">
+        <b>🔔 Работы по ремонту автотранспортных средств — 30 000 ₸</b>
+        <div class="row hot">🔥 Выгодный лот: попытка 2, прошлая не состоялась</div>
+        <div class="row">Запрос ценовых предложений</div>
+        <div class="row">⏳ Приём заявок до 16.11 00:00 — осталось 23 ч</div>
+        <div class="row">🏛 История заказчика: состоялось 7, не состоялось 29</div>
+        <div class="row">📉 Победители обычно снижали цену на 8%. Ориентир цены победы ≈ 27 694 ₸</div>
+        <div class="row">лот 88211145-ЗЦП2 · документы</div>
+      </div>
+      <div class="btns"><div>⭐ Следить: срок и итоги</div><div>🔕 Не присылать по «ремонт»</div></div>
+    </div>
+  </div>
+</main>
+
+<section><div class="wrap">
+  <h2>Как это работает</h2>
+  <div class="grid">
+    <div class="card"><div class="step">ШАГ 1</div><h3>Напишите слово</h3><p>Часть слова из названия товара или услуги. Можно несколько через запятую: «бумаг, канцтовар, картридж».</p></div>
+    <div class="card"><div class="step">ШАГ 2</div><h3>Настройте фильтры</h3><p>Регион поставки, сумма лота от и до, слова-исключения. Или режим «только выгодные 🔥».</p></div>
+    <div class="card"><div class="step">ШАГ 3</div><h3>Получайте лоты</h3><p>Новый лот приходит через несколько минут после публикации. Под лотом — кнопка «Следить».</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Что бот делает за вас</h2>
+  <div class="grid">
+    <div class="card"><h3>⏳ Срок и напоминания</h3><p>Показывает, сколько осталось до конца приёма заявок. По кнопке «Следить» напоминает за 24 ч и за 3 ч.</p></div>
+    <div class="card"><h3>🔁 Повторные закупки</h3><p>Отмечает лоты, где прошлая закупка не состоялась. Конкурентов в таких лотах обычно мало.</p></div>
+    <div class="card"><h3>🏛 История заказчика</h3><p>Сколько его закупок состоялось, не состоялось и отменено. Заказчик с частыми срывами — шанс для нового поставщика.</p></div>
+    <div class="card"><h3>⚠️ «Свой» поставщик</h3><p>Предупреждает, если заказчик отдаёт больше половины договоров одному поставщику. Вы не тратите время на такой лот.</p></div>
+    <div class="card"><h3>📉 Ориентир цены победы</h3><p>По прошлым договорам считает, на сколько победители снижали цену, и кто выигрывает чаще других.</p></div>
+    <div class="card"><h3>🏆 Итоги и изменения</h3><p>Сообщает, если заказчик изменил срок, сумму или статус. Присылает победителя и цену договора.</p></div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Цена</h2>
+  <div class="price">
+    <div class="card">
+      <div class="step">ПРОБНЫЙ ПЕРИОД</div>
+      <div class="big">0 ₸</div>
+      <p>7 дней со всеми функциями. Без карты.</p>
+    </div>
+    <div class="card">
+      <div class="step">ПОДПИСКА</div>
+      <div class="big">1000 ⭐ / 30 дней</div>
+      <p>Оплата звёздами Telegram, около 10 000 ₸ в месяц. Без годового договора.</p>
+      <ul class="check">
+        <li>до 15 слов и 30 лотов в слежении</li>
+        <li>проверка портала каждые 10 минут</li>
+        <li>возврат звёзд командой /refund в течение 48 часов</li>
+        <li>отмена в один клик в настройках Telegram</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Вопросы</h2>
+  <details><summary>Откуда бот берёт данные?</summary><p>Из открытого поиска goszakup.gov.kz. Бот читает те же страницы, которые видит любой посетитель портала. Перед подачей заявки проверьте лот на портале.</p></details>
+  <details><summary>Какие закупки бот присылает?</summary><p>Открытые лоты, где ещё идёт приём заявок. Закупки «из одного источника» бот не присылает: в них может участвовать только приглашённый поставщик.</p></details>
+  <details><summary>Как оплатить звёздами?</summary><p>Звёзды покупаются прямо в Telegram картой или через магазин приложений. Бот пришлёт кнопку оплаты, когда пробный период подходит к концу.</p></details>
+  <details><summary>Можно ли отписаться от слова?</summary><p>Да. Под каждым лотом есть кнопка «Не присылать», а команда /list показывает все слова с кнопками удаления.</p></details>
+  <details><summary>Бот подаёт заявки за меня?</summary><p>Нет. Бот находит и анализирует лоты. Заявку вы подаёте на портале со своей ЭЦП.</p></details>
+</div></section>
+
+<div class="wrap cta">
+  <h2>Начните с первого слова</h2>
+  <a class="btn" href="https://t.me/tender_test123_bot">Открыть Тендер-радар в Telegram</a>
+  <p class="note">7 дней бесплатно</p>
+</div>
+
+<footer><div class="wrap">Тендер-радар KZ — независимый сервис. Не связан с АО «Центр электронных финансов» и Министерством финансов РК. Данные: открытый поиск goszakup.gov.kz.</div></footer>
+</body>
+</html>
